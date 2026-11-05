@@ -48,29 +48,36 @@ SBAGLIATO: "Source URL discordante ma inattiva, quindi non lo riporto."
 GIUSTO: "Riporto il campo discordante come anomalia aperta, con la Website URL
 effettiva verificata a parte."
 
-## Chiudere l'editor può pubblicare (`inferito`, un caso reale, 2026-11-05)
+## Uscire dall'editor: solo Save draft (un caso reale, 2026-11-05)
 
 Dopo modifiche alle bozze, chiudere l'editor con la X in alto a sinistra ha
 mostrato "Publishing 1 of 3" e poi "3 ads were published": le ads sono
-risultate attive. La skill non pubblica mai, quindi:
+risultate attive. La schermata di scelta non è stata vista. La skill non
+pubblica mai, quindi:
 
 ```
-DOPO modifiche alle bozze  NON chiudere l'editor con la X
-IF serve uscire            chiedi a Matteo di farlo lui, oppure lascia l'editor aperto e consegna il report
-NON premere "Preview to publish" né "Publish"
+QUANDO esci dall'editor dopo modifiche  compare una schermata: scegli "Save draft"
+NON premere "Publish", "Preview to publish" né altro pulsante di pubblicazione
 ```
 
-Come uscire senza pubblicare è ancora da verificare con Matteo, vedi
-`punti-da-verificare.md`. Se una pubblicazione parte comunque, si dice subito
-in chat e si propone di mettere le ads in pausa. La pausa non si fa senza il suo ok.
+Uscita senza pubblicare (`dichiarato: Matteo, 2026-11-05`: "basta che fai save
+draft senza cliccare publish quando esce la schermata"). Se la schermata non
+compare e parte "Publishing", si dice subito in chat e si propone di mettere le
+ads in pausa. La pausa non si fa senza il suo ok.
 
-## Caricare i file da disco (`inferito`, 2026-11-05)
+## Caricare i file da disco
 
-Meta crea l'input file solo al clic su "Upload" e l'estensione Chrome non lo
-raggiunge. Nemmeno un server locale con script nella pagina ha funzionato.
+Matteo vuole che sia la skill a caricare i file dalla cartella indicata
+(`dichiarato: Matteo, 2026-11-05`: "vorrei andassi tu nella cartella in
+download per caricare i file"). Il metodo non è ancora funzionante
+(`inferito`, 2026-11-05): Meta crea l'input file solo al clic su "Upload" e
+l'estensione Chrome non lo raggiunge. Nemmeno un server locale con script nella
+pagina ha funzionato, e il selettore nativo richiede i permessi di
+Accessibilità e Registrazione schermo dell'app Claude Desktop, non concessi.
 
 ```
-PRIMA   chiedi a Matteo di caricare i file nella libreria media dell'account
+PROVA   a caricare dalla cartella indicata da Matteo
+IF non riesce  THEN dillo e chiedi a Matteo di caricare i file nella libreria media dell'account
 POI     scegli i file dalla libreria, scheda Account
 ```
 

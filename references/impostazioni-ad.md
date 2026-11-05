@@ -39,8 +39,9 @@ Il riscontro finale è sempre sulla singola ad, dopo il ricarico:
   "Add relevant products to this ad" prima di continuare.
 - **Suggerimenti** come "8% lower Cost per Action (CPA) by showing products": si
   ignorano, vale "Apply now" non cliccato.
-- **Ad sources** (Site links, Products): la regola di Matteo non li nomina. Se
-  restano attivi si scrive nel report, vedi `punti-da-verificare.md`.
+- **Ad sources** (Site links, Products): si spengono entrambi
+  (`dichiarato: Matteo, 2026-11-05`: "si spegni"). Sezione "Ad experiences",
+  riga "Ad sources", pulsante Edit. Esito atteso: 0 attivi.
 
 ## Enhancement
 
@@ -52,6 +53,9 @@ ATTIVI = gli enhancement già attivi nelle ads di riferimento dell'account
 SPENTI = ogni altro enhancement e ogni generazione con AI
 IF Matteo ne chiede uno esplicitamente THEN attivalo per quel caso
 ```
+
+Precisazioni (`dichiarato: Matteo, 2026-11-05`): "Text improvements" resta
+spento. "Video touch-ups" può restare attivo.
 
 Le frasi: "enhancements attivi (di solito solo relevant comments e cta)" e "non
 attivare cose che non ci siano nelle altre ads a meno che non sia richiesto".

@@ -38,31 +38,25 @@ Restano due prove da fare sul primo caso reale e la prova di fine bozza.
 
 ## Emersi dal primo caso reale (2026-11-05, `inferito`)
 
-### Come uscire dall'editor senza pubblicare
+### Chiusi il 2026-11-05 (`dichiarato: Matteo`)
 
-- **Di cosa si tratta**: `comportamenti-interfaccia.md`, sezione "Chiudere
-  l'editor può pubblicare".
-- **Perché serve il parere di Matteo**: in un caso reale la X dell'editor ha
-  pubblicato 3 bozze. Non so quale uscita lasci le ads in bozza.
-- **Proposta**: la skill lascia l'editor aperto e chiede a Matteo di uscire lui.
+- **Uscita dall'editor**: si sceglie "Save draft" nella schermata che compare,
+  mai Publish. Passato in `comportamenti-interfaccia.md`.
+- **Ad sources** (Site links, Products): si spengono. Passato in
+  `impostazioni-ad.md`.
+- **Enhancement**: "Text improvements" spento, "Video touch-ups" può restare
+  attivo. Passato in `impostazioni-ad.md`.
 
-### Ad sources attivi (Site links, Products)
+### Come caricare i file dalla cartella (aperto)
 
-- **Di cosa si tratta**: sezione "Ad experiences", riga "Ad sources", nelle
-  bozze create per duplicazione.
-- **Perché serve il parere di Matteo**: la regola single media non li nomina e
-  restavano attivi (2/4). Vanno spenti o lasciati come nelle ads di riferimento?
-- **Proposta**: spegnerli solo se le ads di riferimento non li hanno.
-
-### Enhancement visti attivi sulle bozze duplicate
-
-- **Di cosa si tratta**: sezione Advantage+ creative enhancements, "Video
-  touch-ups" e "Text improvements" attivi su due bozze, non confrontati con
-  l'ad di riferimento.
-- **Perché serve il parere di Matteo**: la regola dice solo quelli già attivi
-  nelle ads di riferimento.
-- **Proposta**: confrontarli ad ogni caso e spegnere quelli assenti nel
-  riferimento.
+- **Di cosa si tratta**: `comportamenti-interfaccia.md`, sezione "Caricare i
+  file da disco".
+- **Perché serve il parere di Matteo**: vuole che la skill carichi da sola i
+  file dalla cartella indicata. L'estensione Chrome non raggiunge il selettore
+  file di Meta, e il selettore nativo richiede i permessi di Accessibilità e
+  Registrazione schermo dell'app Claude Desktop, non concessi nel caso reale.
+- **Proposta**: concedere i due permessi nell'app e riprovare con il controllo
+  del desktop; fino ad allora vale il ripiego con la libreria media.
 
 ## Caso reale di prova
 
