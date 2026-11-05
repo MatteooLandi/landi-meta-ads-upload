@@ -18,7 +18,7 @@ I tag prodotto e i media correlati ereditati da altre ads si rimuovono sempre.
 
 ## Enhancement
 
-Regola (`inferito` da due frasi di Matteo, da confermare):
+Regola (`dichiarato: Matteo, 2026-11-05`, confermata: "sì esatto"):
 
 ```
 ATTIVI = gli enhancement già attivi nelle ads di riferimento dell'account
@@ -66,10 +66,10 @@ grande dell'ad.
 
 ```
 IF manca l'1:1 THEN lascia il 4:5 (di solito ha la safe zone per l'1:1) e scrivi la riga nel report
-IF il ritaglio automatico taglia il testo più grande THEN segnala come anomalia, non produrre ritagli
+IF il ritaglio automatico taglia il testo più grande THEN trascina l'inquadratura leggermente in alto o in basso per far rientrare il testo nella safe zone. Se non basta, segnala come anomalia. Non produrre file ritagliati
 ```
 
-Le due righe sono proposte mie, da verificare (vedi `punti-da-verificare.md`).
+Le due regole sono `dichiarato: Matteo, 2026-11-05` ("sì" sull'1:1; "puoi draggare leggermente in alto o basso l'immagine per far rientrare il testo nella safe zone, se puoi fallo").
 
 ## Gruppi di posizionamenti
 

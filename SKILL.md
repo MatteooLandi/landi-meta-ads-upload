@@ -1,8 +1,10 @@
 ---
 name: meta-ads-upload
-description: Prepara come bozze in Meta Ads Manager le ads di un set di creatività (video e immagini) su qualunque account. Studia l'account, inventaria i file, abbina le URL, crea una ad per creatività e controlla ad per ad che nome, copy, link e impostazioni siano salvati. Da usare quando Matteo dice "carica queste creatività su Meta" o "prepara le bozze nell'adset". Non pubblica, non crea campagne né audience e non ritaglia le immagini.
+description: Prepara come bozze in Meta Ads Manager le ads di un set di creatività (video e immagini) su qualunque account. Studia l'account, inventaria i file, abbina le URL, crea una ad per creatività e controlla ad per ad che nome, copy, link e impostazioni siano salvati. Da usare quando Matteo dice "carica queste creatività su Meta", "carica delle creative su Meta" o "prepara le bozze nell'adset". Non pubblica, non crea campagne né audience e non produce ritagli delle immagini (può solo spostare l'inquadratura di un ritaglio automatico per far rientrare il testo).
 triggers:
   - "carica queste creatività su Meta"
+  - "carica delle creative su Meta"
+  - "carica queste creative su Meta"
   - "prepara le bozze in Ads Manager"
   - "fai il setup delle ads in questo adset"
   - "carica le ads nell'adset"
@@ -14,7 +16,7 @@ prerequisites:
     - "Link diretto all'account pubblicitario in Ads Manager, dato da Matteo"
     - "Cartelle locali con le creatività da caricare"
   env:
-    - "Chrome pilotabile dall'agente, con la sessione Meta già attiva. Strumento oggi dichiarato: solo Chrome"
+    - "Chrome pilotabile dall'agente, nel browser di Matteo con la sessione Meta già attiva (dichiarato: Matteo, 2026-11-05). Strumento oggi dichiarato: solo Chrome. Da terminale: estensione Claude in Chrome installata con lo stesso account, poi `claude --chrome` oppure `/chrome` in una sessione aperta. Da app desktop: nuova sessione nella stessa cartella dopo l'installazione; se gli strumenti Chrome non compaiono, vale il terminale. Il browser integrato dell'app è un ripiego solo se Matteo vi ha fatto accesso a Meta"
     - "Python 3 per scripts/inventory.py. ffprobe e sips sono facoltativi (durata dei video, dimensioni delle immagini)"
 inputs:
   - "Campagna e adset di destinazione, nuovo o esistente"
@@ -37,7 +39,7 @@ routing:
 stopping_conditions:
   - "Manca il link all'account, la campagna o la cartella delle creatività: pre-flight blocca e chiede"
   - "Stato richiesto diverso da bozza: si ferma, la pubblicazione non fa parte della skill"
-  - "Chrome non è disponibile o la sessione Meta richiede il login: si ferma e lo dice, non inserisce credenziali. Comportamento da verificare con Matteo"
+  - "Chrome non è disponibile o la sessione Meta richiede il login: si ferma, lo dice e indica come attivare Chrome da terminale (`claude --chrome` o `/chrome`), non inserisce credenziali (dichiarato: Matteo, 2026-11-05)"
   - "Prodotto discordante tra cartella, file e contenuto, o URL ambigua: si ferma su quella riga e chiede"
   - "Copy non coerente con le creatività: si ferma e chiede"
   - "Naming dell'account non ricavabile: chiede a Matteo la struttura in chat"
@@ -74,7 +76,7 @@ manuale e la pubblicazione.
 IF link account assente           THEN STOP, chiedi
 IF campagna o cartelle assenti    THEN STOP, chiedi
 IF stato richiesto != bozza       THEN STOP, spiega che la skill non pubblica
-IF Chrome non disponibile         THEN STOP, dillo
+IF Chrome non disponibile         THEN STOP, dillo e richiama il comando: scrivi a Matteo di lanciare `/chrome` nella sessione (o di aprirla con `claude --chrome`), poi riprendi
 IF pagina di login Meta           THEN STOP, chiedi a Matteo di accedere. Mai credenziali
 IF errore di accesso su profilo   THEN ricarica la pagina. Mai toccare permessi
 ```
@@ -104,7 +106,8 @@ Matteo.
 
 ```
 REGISTRA in 6 righe: account | campagna | adset (nuovo|esistente) | cartelle | fonte copy | URL fornite
-IF adset nuovo    THEN come crearlo è da verificare: vedi references/punti-da-verificare.md
+IF adset nuovo    THEN duplica un adset di riferimento della campagna e cambia solo il nome (audience, ottimizzazione, tracciamento invariati). Adset nuovo solo se Matteo lo specifica (dichiarato: Matteo, 2026-11-05)
+IF adset non indicato come nuovo THEN usa l'esistente
 IF fonte copy assente THEN fonte = ads dell'account (vedi passo 5)
 ```
 
@@ -171,6 +174,7 @@ MANTIENI solo gli enhancement attivi nelle ads di riferimento. Tutto il resto sp
 IGNORA i suggerimenti "Apply now"
 Add-on: solo se già nell'account
 CONTROLLA ogni gruppo di posizionamenti: il file previsto, non quello della bozza duplicata
+IF ritaglio automatico taglia il testo più grande  THEN trascina l'inquadratura leggermente in alto o in basso per farlo rientrare nella safe zone. Se non basta, segnala come anomalia
 ```
 
 ### 7. Anti-bug Meta
