@@ -65,20 +65,36 @@ draft senza cliccare publish quando esce la schermata"). Se la schermata non
 compare e parte "Publishing", si dice subito in chat e si propone di mettere le
 ads in pausa. La pausa non si fa senza il suo ok.
 
+Matteo autorizza la skill a uscire dall'editor con "Save draft" a fine lavoro
+(`dichiarato: Matteo, 2026-11-05`: "prossima volta esci tu dall'editor con save
+draft"). Se la sessione nega comunque il clic sulla X, ci si ferma e si spiega,
+senza aggirare il blocco.
+
 ## Caricare i file da disco
 
 Matteo vuole che sia la skill a caricare i file dalla cartella indicata
 (`dichiarato: Matteo, 2026-11-05`: "vorrei andassi tu nella cartella in
-download per caricare i file"). Il metodo non è ancora funzionante
-(`inferito`, 2026-11-05): Meta crea l'input file solo al clic su "Upload" e
-l'estensione Chrome non lo raggiunge. Nemmeno un server locale con script nella
-pagina ha funzionato, e il selettore nativo richiede i permessi di
-Accessibilità e Registrazione schermo dell'app Claude Desktop, non concessi.
+download per caricare i file"). Meta crea l'input file solo al clic su
+"Upload", e il selettore nativo è una finestra del browser: il controllo
+desktop tiene i browser in sola lettura (niente clic né tasti), quindi quel
+selettore non si pilota. Il metodo che funziona non lo usa (`verificato`,
+2026-11-05, 6 file in un passaggio):
 
 ```
-PROVA   a caricare dalla cartella indicata da Matteo
-IF non riesce  THEN dillo e chiedi a Matteo di caricare i file nella libreria media dell'account
-POI     scegli i file dalla libreria, scheda Account
+COPIA   i file della cartella indicata da Matteo nella cartella temporanea della sessione (il tool di upload legge solo cartelle della sessione)
+PAGINA  nel media picker, prima del clic su Upload, esegui in pagina lo snippet sotto: l'input file resta nel documento e il selettore nativo non si apre
+CLIC    su "Upload"
+CERCA   l'input file creato (ricerca "file input") e passa tutti i file al tool di upload in una sola chiamata
+POI     i file compaiono nella libreria già selezionati: togli quelli che non servono alla ad
+IF non riesce  THEN dillo e chiedi a Matteo di caricare i file nella libreria media dell'account, scheda Account
+```
+
+```js
+const orig = HTMLInputElement.prototype.click;
+HTMLInputElement.prototype.click = function () {
+  if (this.type === 'file') { document.body.appendChild(this); return; }
+  return orig.apply(this, arguments);
+};
 ```
 
 Nella libreria ci sono file di campagne vecchie con lo stesso nome (`1.png`,

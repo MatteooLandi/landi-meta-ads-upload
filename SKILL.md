@@ -158,7 +158,7 @@ Dettaglio in [impostazioni-ad.md](references/impostazioni-ad.md).
 ```
 PER OGNI creatività valida:
   crea ad con nome unico dal naming dell'account. RIMUOVI "- copy"
-  carica il file dalla cartella indicata da Matteo; se il caricamento da disco non riesce, chiedi a Matteo di caricarlo nella libreria media e prendilo da lì. VERIFICA che sia applicato, non solo selezionato
+  carica i file dalla cartella indicata da Matteo con il metodo di references/comportamenti-interfaccia.md (copia nella cartella della sessione, input file intercettato, tool di upload); se non riesce, chiedi a Matteo di caricarli nella libreria media e prendili da lì. VERIFICA che sia applicato, non solo selezionato
   assegna URL, testo principale, headline, description
 IF copy mancante          THEN prendilo dalle ads di riferimento (ricorrente, o la variante indicata)
 IF copy incoerente col file THEN STOP, chiedi

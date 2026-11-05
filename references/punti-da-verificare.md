@@ -47,16 +47,12 @@ Restano due prove da fare sul primo caso reale e la prova di fine bozza.
 - **Enhancement**: "Text improvements" spento, "Video touch-ups" può restare
   attivo. Passato in `impostazioni-ad.md`.
 
-### Come caricare i file dalla cartella (aperto)
+### Come caricare i file dalla cartella (chiuso il 2026-11-05)
 
-- **Di cosa si tratta**: `comportamenti-interfaccia.md`, sezione "Caricare i
-  file da disco".
-- **Perché serve il parere di Matteo**: vuole che la skill carichi da sola i
-  file dalla cartella indicata. L'estensione Chrome non raggiunge il selettore
-  file di Meta, e il selettore nativo richiede i permessi di Accessibilità e
-  Registrazione schermo dell'app Claude Desktop, non concessi nel caso reale.
-- **Proposta**: concedere i due permessi nell'app e riprovare con il controllo
-  del desktop; fino ad allora vale il ripiego con la libreria media.
+- **Esito**: il selettore nativo non si pilota, perché i browser restano in sola
+  lettura nel controllo desktop. Funziona la copia dei file nella cartella della
+  sessione, con intercettazione dell'input file e tool di upload. Passato in
+  `comportamenti-interfaccia.md`.
 
 ## Caso reale di prova
 

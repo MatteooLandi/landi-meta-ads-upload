@@ -37,6 +37,12 @@ Il riscontro finale è sempre sulla singola ad, dopo il ricarico:
   vista con più ads selezionate: si fa ad per ad.
 - **Duplicazione**: nella finestra "Duplicate your ad" si toglie la spunta
   "Add relevant products to this ad" prima di continuare.
+- **Raccomandazioni pre-spuntate** (`dichiarato: Matteo, 2026-11-05`: "quando
+  vedi quei suggerimenti despuntali"): nei dialog di duplicazione di adset e di
+  ad Meta propone raccomandazioni già spuntate (Advantage+ sull'audience,
+  conversion location, prodotti accanto ai media). Si tolgono tutte prima di
+  Continue o Duplicate. Dopo il clic il dialog si sposta e il pulsante cambia
+  nome: rileggere la posizione prima di cliccare.
 - **Suggerimenti** come "8% lower Cost per Action (CPA) by showing products": si
   ignorano, vale "Apply now" non cliccato.
 - **Ad sources** (Site links, Products): si spengono entrambi
@@ -101,20 +107,26 @@ IF il ritaglio automatico taglia il testo più grande THEN trascina l'inquadratu
 
 Le due regole sono `dichiarato: Matteo, 2026-11-05` ("sì" sull'1:1; "puoi draggare leggermente in alto o basso l'immagine per far rientrare il testo nella safe zone, se puoi fallo").
 
-### Immagini: dove si assegna ogni file (`inferito`, provato 2026-11-05)
+### Immagini: più formati nella stessa ad (`verificato`, 2026-11-05)
 
-Una ad statica ha tre file (4:5, 1:1, 1.91:1). Si assegnano così, dal flusso
-"Add media > Add image":
+Nell'editor attuale "Customize media" > Crop non ha Replace: offre solo
+"Original" e un ritaglio manuale che taglia l'immagine, e il pannello
+Placements serve solo a escludere posizionamenti. Una ad statica con più file
+(4:5, 1:1, 9:16, 1.91:1 se esiste) si compone così, dal media picker ("Change
+selections" o "Edit media"):
 
 ```
-PASSO Media     scegli il 4:5 come immagine principale
-PASSO Crop      per Square (Feeds): Replace e scegli l'1:1. Deve passare a "Original"
-                per Horizontal (Right column, Search results): Replace e scegli l'1.91:1
-                Vertical 9:16: resta il ritaglio automatico se non c'è un 9:16
-PASSO Text      "Tailor variations to personas" spento
-PASSI Image generation, Video generation, Enhancements, Translation
-                nessuna selezione, nessuna lingua. Poi Done
+PASSO Media     seleziona insieme tutti i file della stessa creatività
+                Meta li riconosce come "Image group" (variazioni della stessa immagine) e assegna il file giusto a ogni posizionamento
+                nel riepilogo in basso compare un solo gruppo, con "3 variations"
+PASSI Text, Image generation, Video generation, Enhancements, Translation
+                nessuna selezione, nessuna lingua, enhancement spenti. Poi Done
+IF manca un formato (es. 1.91:1)  THEN resta il ritaglio automatico e si scrive nel report come non verificato
 ```
+
+Per togliere un gruppo dalla selezione: riepilogo in basso, clic sul gruppo,
+cestino, Confirm. Per una seconda creatività conviene duplicare la prima ad e
+cambiare solo il gruppo di media.
 
 Alla fine il crop di ogni ad si controlla a vista: il testo grande non deve
 essere tagliato.
