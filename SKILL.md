@@ -89,7 +89,12 @@ Matteo.
 ## Regole trasversali
 
 - **Bozza sempre.** Niente "Publish", "Preview to publish" o passaggi che
-  possano pubblicare. Anche se l'interfaccia li propone.
+  possano pubblicare. Anche se l'interfaccia li propone. Anche chiudere
+  l'editor con la X dopo modifiche può pubblicare (un caso reale, 2026-11-05):
+  vedi `references/comportamenti-interfaccia.md`.
+- **Solo Single media, nient'altro** (`dichiarato: Matteo, 2026-11-05`). Product
+  browsing spento, Carousel e Collection spenti. Dettaglio in
+  `references/impostazioni-ad.md`.
 - **Interazione solo in chat, poche parole.** Report e domande in chat, in tabelle
   e bullet. Nessun file di report.
 - **Lettura lean del browser.** Per ogni ciclo leggi solo nodi visibili e
@@ -152,7 +157,7 @@ Dettaglio in [impostazioni-ad.md](references/impostazioni-ad.md).
 ```
 PER OGNI creatività valida:
   crea ad con nome unico dal naming dell'account. RIMUOVI "- copy"
-  carica il file dal selettore. VERIFICA che sia applicato, non solo selezionato
+  prendi il file dalla libreria media (Matteo lo carica prima, l'estensione non raggiunge il selettore). VERIFICA che sia applicato, non solo selezionato
   assegna URL, testo principale, headline, description
 IF copy mancante          THEN prendilo dalle ads di riferimento (ricorrente, o la variante indicata)
 IF copy incoerente col file THEN STOP, chiedi
@@ -167,8 +172,9 @@ bene."
 ### 6. Impostazioni
 
 ```
-FORMATO = solo "Single image or video" (o "Single media")
-SPEGNI Carousel | Collection | Video slideshow | varianti prodotto o app store
+FORMATO = solo "Single image or video" (o "Single media"), nient'altro
+SPEGNI Product browsing (Personalized destinations deve essere 0/4)
+SPEGNI Carousel | Collection | Video slideshow | varianti prodotto o app store (Format display options deve essere 1/3)
 SPEGNI prodotti, media correlati, tag prodotto ereditati
 MANTIENI solo gli enhancement attivi nelle ads di riferimento. Tutto il resto spento
 IGNORA i suggerimenti "Apply now"
@@ -217,7 +223,9 @@ prodotto, URL, stato, anomalie), verifiche non fatte. Nessun file scritto.
 - [ ] Ads create uguali alle creatività valide dell'inventario
 - [ ] Nomi unici, nessun - copy, naming come nell'account
 - [ ] URL, copy, headline e description coerenti con ogni file
-- [ ] Single media, nessun formato, prodotto o enhancement non richiesto
+- [ ] Single media e nient'altro: Product browsing spento, Format display options 1/3
+- [ ] Nessun formato, prodotto o enhancement non richiesto
+- [ ] Editor non chiuso con la X dopo le modifiche, nomi unici riletti nella lista ads
 - [ ] Ogni gruppo di posizionamenti controllato
 - [ ] Ads corrette ricaricate e controlli ripetuti
 - [ ] Controlli non fatti scritti come non verificati

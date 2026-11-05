@@ -36,6 +36,34 @@ Restano due prove da fare sul primo caso reale e la prova di fine bozza.
   nomi reali.
 - **Proposta**: correggere i token sulla prima cartella vera.
 
+## Emersi dal primo caso reale (2026-11-05, `inferito`)
+
+### Come uscire dall'editor senza pubblicare
+
+- **Di cosa si tratta**: `comportamenti-interfaccia.md`, sezione "Chiudere
+  l'editor può pubblicare".
+- **Perché serve il parere di Matteo**: in un caso reale la X dell'editor ha
+  pubblicato 3 bozze. Non so quale uscita lasci le ads in bozza.
+- **Proposta**: la skill lascia l'editor aperto e chiede a Matteo di uscire lui.
+
+### Ad sources attivi (Site links, Products)
+
+- **Di cosa si tratta**: sezione "Ad experiences", riga "Ad sources", nelle
+  bozze create per duplicazione.
+- **Perché serve il parere di Matteo**: la regola single media non li nomina e
+  restavano attivi (2/4). Vanno spenti o lasciati come nelle ads di riferimento?
+- **Proposta**: spegnerli solo se le ads di riferimento non li hanno.
+
+### Enhancement visti attivi sulle bozze duplicate
+
+- **Di cosa si tratta**: sezione Advantage+ creative enhancements, "Video
+  touch-ups" e "Text improvements" attivi su due bozze, non confrontati con
+  l'ad di riferimento.
+- **Perché serve il parere di Matteo**: la regola dice solo quelli già attivi
+  nelle ads di riferimento.
+- **Proposta**: confrontarli ad ogni caso e spegnere quelli assenti nel
+  riferimento.
+
 ## Caso reale di prova
 
 Nessun caso scelto. Matteo ha detto di mettere online la skill senza prova

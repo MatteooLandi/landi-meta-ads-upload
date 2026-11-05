@@ -48,6 +48,55 @@ SBAGLIATO: "Source URL discordante ma inattiva, quindi non lo riporto."
 GIUSTO: "Riporto il campo discordante come anomalia aperta, con la Website URL
 effettiva verificata a parte."
 
+## Chiudere l'editor può pubblicare (`inferito`, un caso reale, 2026-11-05)
+
+Dopo modifiche alle bozze, chiudere l'editor con la X in alto a sinistra ha
+mostrato "Publishing 1 of 3" e poi "3 ads were published": le ads sono
+risultate attive. La skill non pubblica mai, quindi:
+
+```
+DOPO modifiche alle bozze  NON chiudere l'editor con la X
+IF serve uscire            chiedi a Matteo di farlo lui, oppure lascia l'editor aperto e consegna il report
+NON premere "Preview to publish" né "Publish"
+```
+
+Come uscire senza pubblicare è ancora da verificare con Matteo, vedi
+`punti-da-verificare.md`. Se una pubblicazione parte comunque, si dice subito
+in chat e si propone di mettere le ads in pausa. La pausa non si fa senza il suo ok.
+
+## Caricare i file da disco (`inferito`, 2026-11-05)
+
+Meta crea l'input file solo al clic su "Upload" e l'estensione Chrome non lo
+raggiunge. Nemmeno un server locale con script nella pagina ha funzionato.
+
+```
+PRIMA   chiedi a Matteo di caricare i file nella libreria media dell'account
+POI     scegli i file dalla libreria, scheda Account
+```
+
+Nella libreria ci sono file di campagne vecchie con lo stesso nome (`1.png`,
+`2.png`). Si riconoscono quelli nuovi per dimensione e per posizione (i più
+recenti compaiono per primi) e si controlla l'anteprima prima di confermare. Un
+clic sulla miniatura può solo passare il mouse: la selezione è avvenuta quando
+sotto compare "1 selected".
+
+## Nome della ad (`inferito`, 2026-11-05)
+
+- La modifica massiva "Edit each ad" > Name con un campo per ad funziona, se si
+  clicca fuori dal campo prima di salvare.
+- Nell'editor il campo "Ad name" può non aggiornarsi passando da una bozza
+  all'altra, e un valore impostato da tool può non restare. Il riscontro vero è
+  la lista ads, non il campo.
+- Dopo ogni rinomina si rilegge la lista e si controlla che i nomi siano
+  unici e che ciascuno corrisponda alle sue immagini. Una rinomina fatta a
+  vista ha creato due ads con lo stesso nome.
+
+## Modifica di più ads insieme
+
+Selezionando più bozze nella barra laterale ("Your edits will apply to 3 ads")
+si cambiano insieme voci come Product browsing. Il pannello Format display
+options e il nome richiedono la singola ad o "Edit each ad".
+
 ## Errore di login su un profilo
 
 Se un profilo selezionato mostra errore di accesso: ricarica la pagina e

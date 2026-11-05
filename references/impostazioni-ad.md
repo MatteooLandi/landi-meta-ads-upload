@@ -6,15 +6,41 @@ marcata sotto.
 
 # Impostazioni di ogni ad
 
-## Formato: single media
+## Formato: solo Single media, nient'altro
+
+Regola (`dichiarato: Matteo, 2026-11-05`: "togli product browsing, e lascia
+esclusivamente single media"):
 
 ```
 ATTIVO   solo "Single image or video" (o "Single media", come scrive l'interfaccia)
 SPENTO   Carousel | Collection | Video slideshow | varianti con prodotti o dettagli di app store
+SPENTO   Product browsing
 SPENTO   prodotti, media correlati, tag prodotto, ogni fonte che aggiunge prodotti o link non richiesti
 ```
 
 I tag prodotto e i media correlati ereditati da altre ads si rimuovono sempre.
+
+### Dove si spegne (`inferito`, provato su un caso reale, 2026-11-05)
+
+Il riscontro finale è sempre sulla singola ad, dopo il ricarico:
+
+- **Product browsing**: sezione "Personalized destinations", deve risultare
+  `(0/4)`. In modifica massiva ("Edit each ad", voce "Product browsing") si
+  toglie la spunta "Use product browsing to personalize buyer journey" su
+  "Edit all selected ads" e si controlla ogni riga.
+- **Carousel e Collection**: sezione "Ad experiences", riga "Format display
+  options", pulsante Edit. Nel pannello Carousel si tolgono "Show products" e
+  "Show app store details"; nel pannello Collection "Show products" e "Show
+  site links". Ogni pannello deve mostrare `0 of 2 enabled`. In Single media il
+  collage "Show mixed media" resta spento. Esito atteso: "Format display
+  options (1/3)", con acceso solo Single media. Il pannello non compare nella
+  vista con più ads selezionate: si fa ad per ad.
+- **Duplicazione**: nella finestra "Duplicate your ad" si toglie la spunta
+  "Add relevant products to this ad" prima di continuare.
+- **Suggerimenti** come "8% lower Cost per Action (CPA) by showing products": si
+  ignorano, vale "Apply now" non cliccato.
+- **Ad sources** (Site links, Products): la regola di Matteo non li nomina. Se
+  restano attivi si scrive nel report, vedi `punti-da-verificare.md`.
 
 ## Enhancement
 
@@ -70,6 +96,24 @@ IF il ritaglio automatico taglia il testo più grande THEN trascina l'inquadratu
 ```
 
 Le due regole sono `dichiarato: Matteo, 2026-11-05` ("sì" sull'1:1; "puoi draggare leggermente in alto o basso l'immagine per far rientrare il testo nella safe zone, se puoi fallo").
+
+### Immagini: dove si assegna ogni file (`inferito`, provato 2026-11-05)
+
+Una ad statica ha tre file (4:5, 1:1, 1.91:1). Si assegnano così, dal flusso
+"Add media > Add image":
+
+```
+PASSO Media     scegli il 4:5 come immagine principale
+PASSO Crop      per Square (Feeds): Replace e scegli l'1:1. Deve passare a "Original"
+                per Horizontal (Right column, Search results): Replace e scegli l'1.91:1
+                Vertical 9:16: resta il ritaglio automatico se non c'è un 9:16
+PASSO Text      "Tailor variations to personas" spento
+PASSI Image generation, Video generation, Enhancements, Translation
+                nessuna selezione, nessuna lingua. Poi Done
+```
+
+Alla fine il crop di ogni ad si controlla a vista: il testo grande non deve
+essere tagliato.
 
 ## Gruppi di posizionamenti
 
