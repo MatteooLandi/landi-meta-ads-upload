@@ -34,6 +34,32 @@ RILEGGI i campi e verifica che il salvataggio persista
 
 Si ricaricano almeno le ads corrette.
 
+Dopo il ricarico, in un caso reale (`verificato`, 2026-11-06), su ads con
+destinazione Website la CTA scelta era tornata a "See details" e la Website URL
+aveva in coda `?fbclid=fbclid` (Meta lo scrive aprendo l'anteprima del link).
+
+```
+DOPO il ricarico  RILEGGI CTA e Website URL di ogni ad
+IF CTA tornata a "See details"  THEN reimposta la CTA voluta
+IF URL con ?fbclid=fbclid in coda  THEN riscrivi l'URL pulita e riverifica
+```
+
+## Escape nell'editor (`verificato`, 2026-11-06)
+
+Premere Escape nell'editor apre il dialogo "Publish draft items?" e chiude
+l'editor.
+
+```
+NON usare Escape nell'editor. Per chiudere un popover clicca in un'area vuota
+IF compare "Publish draft items?"  THEN chiudi con "Close", mai con Publish
+```
+
+## Duplicare una ad con destinazione Website (`verificato`, 2026-11-06)
+
+Il dialogo di duplicazione pre-spunta raccomandazioni come "Add an image".
+Togli la spunta prima di confermare, in coerenza con Single media e con "non
+attivare ciò che le ads di riferimento non hanno".
+
 ## Source URL che torna al valore ereditato
 
 Se, con tutte le fonti accessorie spente, il campo Source URL torna a un valore
@@ -89,6 +115,17 @@ POI     i file compaiono nella libreria già selezionati: togli quelli che non s
 IF non riesce  THEN dillo e chiedi a Matteo di caricare i file nella libreria media dell'account, scheda Account
 ```
 
+Limite del tool di upload: 10 MB per chiamata (`verificato`, 2026-11-06, video
+da 94 e 145 MB rifiutati). I video verticali 4K lo superano quasi sempre, e il
+fetch da un server locale è bloccato dalla pagina Meta. Non si aggira.
+
+```
+NEL pre-flight, SE un file supera 10 MB  AVVISA subito e chiedi a Matteo di caricarlo nella libreria media prima di iniziare, poi prendilo da lì
+```
+
+Senza un media già scelto, l'editor non permette di inserire i testi della ad:
+conviene far caricare i file prima di compilare.
+
 ```js
 const orig = HTMLInputElement.prototype.click;
 HTMLInputElement.prototype.click = function () {
@@ -119,6 +156,10 @@ sotto compare "1 selected".
 Selezionando più bozze nella barra laterale ("Your edits will apply to 3 ads")
 si cambiano insieme voci come Product browsing. Il pannello Format display
 options e il nome richiedono la singola ad o "Edit each ad".
+
+Le modifiche valgono per tutte le ads selezionate (`verificato`, 2026-11-06):
+se un valore deve differire da ad a ad (testo, destinazione, CTA), seleziona
+una ad per volta.
 
 ## Errore di login su un profilo
 

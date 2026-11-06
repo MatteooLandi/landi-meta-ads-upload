@@ -77,6 +77,7 @@ IF link account assente           THEN STOP, chiedi
 IF campagna o cartelle assenti    THEN STOP, chiedi
 IF stato richiesto != bozza       THEN STOP, spiega che la skill non pubblica
 IF Chrome non disponibile         THEN STOP, dillo e richiama il comando: scrivi a Matteo di lanciare `/chrome` nella sessione (o di aprirla con `claude --chrome`), poi riprendi
+IF file sopra 10 MB               THEN avvisa subito: il tool di upload non li carica. Chiedi a Matteo di caricarli nella libreria media prima di iniziare
 IF pagina di login Meta           THEN STOP, chiedi a Matteo di accedere. Mai credenziali
 IF errore di accesso su profilo   THEN ricarica la pagina. Mai toccare permessi
 ```
@@ -193,6 +194,8 @@ DOPO ogni modifica  ATTENDI che il pannello mostri il valore nuovo
 DOPO cambio URL/sorgente  RICONTROLLA i formati: Meta può riattivare carousel o slideshow
 IF riepilogo != dettaglio  THEN fidati del dettaglio e riapri
 RICARICA (hard reload) le ads corrette e verifica che il salvataggio persista
+DOPO il ricarico  RILEGGI CTA e Website URL: possono tornare "See details" e comparire con ?fbclid=fbclid in coda
+NON usare Escape nell'editor: apre "Publish draft items?" e chiude l'editor
 IF Source URL torna al valore ereditato  THEN documenta, non dichiarare risolto
 ```
 
