@@ -248,7 +248,7 @@ Matteo controlla le bozze in Ads Manager e pubblica. Nessuna skill a valle.
 - [comportamenti-interfaccia.md](references/comportamenti-interfaccia.md): attese, riattivazioni di Meta, lettura lean
 - [audit-e-report.md](references/audit-e-report.md): checklist ad per ad e formato del report
 - [punti-da-verificare.md](references/punti-da-verificare.md): campi che Matteo non ha definito
-- [docs/provenance-schema.md](../../docs/provenance-schema.md): tag di provenienza
-- [docs/anti-ai-slop-writing-standard.md](../../docs/anti-ai-slop-writing-standard.md): standard di scrittura per copy e messaggi
+- [CONVENTIONS/provenance.md](CONVENTIONS/provenance.md): tag di provenienza (copia dal Brain)
+- [CONVENTIONS/anti-ai-slop-writing-standard.md](CONVENTIONS/anti-ai-slop-writing-standard.md): standard di scrittura per copy e messaggi (copia dal Brain)
 
 Made in Landi Brain · [Matteo Landi](https://www.linkedin.com/in/matteolandidigital)

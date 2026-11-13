@@ -11,7 +11,7 @@ formati delle immagini e uso dell'hash: proposta mia, da verificare.
 Non usa l'AI: scansione, hash e dimensioni sono meccanici.
 
 ```
-python3 skills/meta-ads-upload/scripts/inventory.py <cartella> [--video-subdir Export]
+python3 <cartella della skill>/scripts/inventory.py <cartella> [--video-subdir Export]
 ```
 
 Colonne: `Path | File | Tipo | WxH | Rapporto | Durata | SHA256 | Gruppo | DupDi`.
