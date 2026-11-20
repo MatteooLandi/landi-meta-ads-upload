@@ -39,7 +39,7 @@ routing:
 stopping_conditions:
   - "Manca il link all'account, la campagna o la cartella delle creatività: pre-flight blocca e chiede"
   - "Stato richiesto diverso da bozza: si ferma, la pubblicazione non fa parte della skill"
-  - "Chrome non è disponibile o la sessione Meta richiede il login: si ferma, lo dice e indica come attivare Chrome da terminale (`claude --chrome` o `/chrome`), non inserisce credenziali (dichiarato: Matteo, 2026-11-05)"
+  - "Chrome non è disponibile o la sessione Meta richiede il login: si ferma, lo dice, guida passo per passo con references/attivare-chrome.md (chat Desktop senza Chrome, sessione Claude Code con `claude --chrome`, richiesta già pronta), non inserisce credenziali (dichiarato: Matteo, 2026-11-05; guida inferito, 2026-11-20)"
   - "Prodotto discordante tra cartella, file e contenuto, o URL ambigua: si ferma su quella riga e chiede"
   - "Copy non coerente con le creatività: si ferma e chiede"
   - "Naming dell'account non ricavabile: chiede a Matteo la struttura in chat"
@@ -76,8 +76,9 @@ manuale e la pubblicazione.
 IF link account assente           THEN STOP, chiedi
 IF campagna o cartelle assenti    THEN STOP, chiedi
 IF stato richiesto != bozza       THEN STOP, spiega che la skill non pubblica
-IF Chrome non disponibile         THEN STOP, dillo e richiama il comando: scrivi a Matteo di lanciare `/chrome` nella sessione (o di aprirla con `claude --chrome`), poi riprendi
+IF Chrome non disponibile         THEN STOP: prova prima l'altro browser collegato e controlla i connettori; se mancano ancora, segui references/attivare-chrome.md (chat Desktop senza Chrome, dove aprire la sessione Claude Code, richiesta già pronta da incollare), poi riprendi
 IF file sopra 10 MB               THEN avvisa subito: il tool di upload non li carica. Chiedi a Matteo di caricarli nella libreria media prima di iniziare
+IF creatività su Drive             THEN scaricale dal Chrome di Matteo (references/comportamenti-interfaccia.md), non col connettore né con curl
 IF pagina di login Meta           THEN STOP, chiedi a Matteo di accedere. Mai credenziali
 IF errore di accesso su profilo   THEN ricarica la pagina. Mai toccare permessi
 ```
@@ -175,7 +176,7 @@ bene."
 
 ```
 FORMATO = solo "Single image or video" (o "Single media"), nient'altro
-SPEGNI Product browsing (Personalized destinations deve essere 0/4)
+SPEGNI Product browsing (Personalized destinations deve essere 0/4). Se resta bloccato su On, togli prima i tag prodotto
 SPEGNI Carousel | Collection | Video slideshow | varianti prodotto o app store (Format display options deve essere 1/3)
 SPEGNI prodotti, media correlati, tag prodotto ereditati
 MANTIENI solo gli enhancement attivi nelle ads di riferimento. Tutto il resto spento
@@ -196,6 +197,7 @@ IF riepilogo != dettaglio  THEN fidati del dettaglio e riapri
 RICARICA (hard reload) le ads corrette e verifica che il salvataggio persista
 DOPO il ricarico  RILEGGI CTA e Website URL: possono tornare "See details" e comparire con ?fbclid=fbclid in coda
 NON usare Escape nell'editor: apre "Publish draft items?" e chiude l'editor
+NEL dialogo dei media chiudi solo con Done, mai con Esc (scarta le modifiche dei passi successivi)
 IF Source URL torna al valore ereditato  THEN documenta, non dichiarare risolto
 ```
 
@@ -245,7 +247,8 @@ Matteo controlla le bozze in Ads Manager e pubblica. Nessuna skill a valle.
 - [studio-account.md](references/studio-account.md): cosa si ricava dall'account prima di creare
 - [inventario-e-url.md](references/inventario-e-url.md): matrice, deduplica e abbinamento delle URL
 - [impostazioni-ad.md](references/impostazioni-ad.md): single media, enhancement, posizionamenti
-- [comportamenti-interfaccia.md](references/comportamenti-interfaccia.md): attese, riattivazioni di Meta, lettura lean
+- [comportamenti-interfaccia.md](references/comportamenti-interfaccia.md): attese, riattivazioni di Meta, creatività su Drive, più browser, dialogo dei media, lettura lean
+- [attivare-chrome.md](references/attivare-chrome.md): Chrome non disponibile in una chat Desktop, guida passo per passo
 - [audit-e-report.md](references/audit-e-report.md): checklist ad per ad e formato del report
 - [punti-da-verificare.md](references/punti-da-verificare.md): campi che Matteo non ha definito
 - [CONVENTIONS/provenance.md](CONVENTIONS/provenance.md): tag di provenienza (copia dal Brain)

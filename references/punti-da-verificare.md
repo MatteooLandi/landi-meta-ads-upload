@@ -54,6 +54,27 @@ Restano due prove da fare sul primo caso reale e la prova di fine bozza.
   sessione, con intercettazione dell'input file e tool di upload. Passato in
   `comportamenti-interfaccia.md`.
 
+## Aggiunti il 2026-11-20 da proposte di progetti cliente (`inferito`)
+
+Approvati da Matteo il 2026-11-20 (`dichiarato`, "Sì, scrivili"). La base è un solo
+caso su un solo output per ciascuno, quindi restano `inferito` finché un secondo
+caricamento non li conferma.
+
+- **Creatività su Drive** (`comportamenti-interfaccia.md`): si scaricano dal Chrome
+  di Matteo, aprendo il link di download in una scheda. Cosa serve: confermarlo al
+  prossimo caricamento da Drive.
+- **Più browser collegati** (`comportamenti-interfaccia.md`): se il primo non
+  risponde si prova l'altro. Si conferma al prossimo caso con due browser collegati.
+- **Dialogo dei media chiuso solo con Done** (`comportamenti-interfaccia.md`): Esc
+  scarta le modifiche dei passi successivi. Si conferma riaprendo la ad dopo Done.
+- **Product browsing bloccato su On con i tag prodotto attivi**
+  (`comportamenti-interfaccia.md`): si tolgono prima i tag. Si conferma sulla prima ad con tag attivi.
+- **Chrome non disponibile in una chat Desktop** (`attivare-chrome.md`): guida con
+  richiesta già pronta. Cosa serve: dire se la richiesta da incollare ti sembra
+  completa o se vuoi altri campi.
+- **Invio a blocchi dei video sopra 10 MB**: non provato, quindi non scritto. Resta
+  il caricamento manuale nella libreria.
+
 ## Caso reale di prova
 
 Nessun caso scelto. Matteo ha detto di mettere online la skill senza prova

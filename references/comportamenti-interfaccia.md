@@ -96,6 +96,49 @@ Matteo autorizza la skill a uscire dall'editor con "Save draft" a fine lavoro
 draft"). Se la sessione nega comunque il clic sulla X, ci si ferma e si spiega,
 senza aggirare il blocco.
 
+## Creatività su Google Drive (`inferito`, una sessione del 2026-11-12)
+
+Base: una proposta di un progetto cliente, un solo caso su un solo output. Se le
+creatività stanno in una cartella Drive, l'agente non le scarica né con il
+connettore Drive né con `curl`. Il Chrome di Matteo è già connesso a Drive.
+
+```
+IF le creatività stanno su Drive  THEN apri il link di download di ogni file in una scheda Chrome, poi sposta i file scaricati in una cartella pulita
+POI   usa quella cartella come cartella indicata da Matteo (metodo "Caricare i file da disco")
+IF il download non parte  THEN dillo e chiedi a Matteo di scaricare i file nella cartella Download
+```
+
+## Più browser collegati all'estensione (`inferito`, stessa sessione)
+
+Con più browser collegati all'estensione Claude in Chrome, il primo può non
+rispondere.
+
+```
+IF lo strumento Chrome non risponde e risultano più browser collegati  THEN prova l'altro browser prima di dichiarare Chrome non disponibile
+```
+
+## Dialogo dei media: si chiude solo con Done (`inferito`, stessa sessione)
+
+Nel dialogo dei media, premere Esc lo chiude senza applicare le modifiche fatte
+nei passi successivi (Text, Enhancements e gli altri). Vale la regola già scritta
+per l'editor: Esc non si usa.
+
+```
+NEL dialogo dei media  CHIUDI sempre con Done, mai con Esc
+DOPO Done  RIAPRI il dettaglio della ad e verifica che le selezioni siano rimaste
+```
+
+## Dopo il cambio dei media: Meta riattiva formati e tag (`inferito`, stessa sessione)
+
+Dopo aver cambiato i media, Meta può riattivare Carousel, Collection e i tag
+prodotto. Con i tag prodotto attivi, l'interruttore Product browsing resta
+bloccato su On e non si spegne finché i tag non sono tolti.
+
+```
+DOPO il cambio dei media  CONTROLLA Format display options (deve essere 1/3), Product browsing (Personalized destinations 0/4) e i tag prodotto
+IF Product browsing resta bloccato su On  THEN togli prima i tag prodotto, poi spegni Product browsing e riverifica
+```
+
 ## Caricare i file da disco
 
 Matteo vuole che sia la skill a caricare i file dalla cartella indicata
@@ -117,7 +160,9 @@ IF non riesce  THEN dillo e chiedi a Matteo di caricare i file nella libreria me
 
 Limite del tool di upload: 10 MB per chiamata (`verificato`, 2026-11-06, video
 da 94 e 145 MB rifiutati). I video verticali 4K lo superano quasi sempre, e il
-fetch da un server locale è bloccato dalla pagina Meta. Non si aggira.
+fetch da un server locale è bloccato dalla pagina Meta. Non si aggira. Un invio a
+blocchi non è stato provato e non fa parte della skill: l'unica via verificata è
+il caricamento manuale nella libreria.
 
 ```
 NEL pre-flight, SE un file supera 10 MB  AVVISA subito e chiedi a Matteo di caricarlo nella libreria media prima di iniziare, poi prendilo da lì

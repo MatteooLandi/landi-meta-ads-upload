@@ -17,7 +17,10 @@ vanno controllate una per una in Ads Manager prima di pubblicare.
 
 ## Cosa serve
 
-- Claude Code (terminale o scheda Code dell'app desktop).
+- Claude Code (terminale o scheda Code dell'app desktop). Una chat normale
+  dell'app Desktop non carica gli strumenti Chrome: serve una sessione Claude
+  Code. La guida passo per passo, con la richiesta già pronta da incollare, è in
+  `references/attivare-chrome.md`.
 - L'estensione Claude in Chrome, installata con lo stesso account Claude, e
   Chrome con l'accesso a Meta già fatto. Da terminale si apre la sessione con
   `claude --chrome` oppure si scrive `/chrome` in una sessione aperta.
