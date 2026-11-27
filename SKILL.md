@@ -95,6 +95,9 @@ Matteo.
   dopo modifiche si sceglie "Save draft" (`dichiarato: Matteo, 2026-11-05`):
   chiudere con la X ha pubblicato 3 ads in un caso reale. Vedi
   `references/comportamenti-interfaccia.md`.
+- **Scarto solo con conferma.** Scartare bozze è permanente. Prima di eliminarle
+  chiedi a Matteo, anche se le hai create tu nella sessione
+  (`inferito: caso 2026-11-27, da confermare con Matteo`).
 - **Solo Single media, nient'altro** (`dichiarato: Matteo, 2026-11-05`). Product
   browsing spento, Carousel e Collection spenti. Dettaglio in
   `references/impostazioni-ad.md`.
@@ -229,6 +232,10 @@ controlla il file in ognuno, oppure si scrive non verificato."
 Report compatto in chat con: file validi, bozze create, duplicati, correzioni,
 tabella cartella o prodotto con URL, esito per creatività (file, nome ad,
 prodotto, URL, stato, anomalie), verifiche non fatte. Nessun file scritto.
+
+A caricamento finito il report chiude con l'output di default: tabella campagna,
+adset, URL e numero di ads, poi la struttura dei nomi. Dettaglio in
+`references/audit-e-report.md`.
 
 ## Quality checklist
 

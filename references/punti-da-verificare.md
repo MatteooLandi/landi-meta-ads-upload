@@ -77,7 +77,8 @@ caricamento non li conferma.
 
 ## Caso reale di prova
 
-Nessun caso scelto. Matteo ha detto di mettere online la skill senza prova
-(2026-11-05). Il primo caricamento reale fa da prova e si registra cosa si rompe.
+La prova di fine bozza è chiusa: la skill è stata testata su più casi reali,
+confermato da Matteo il 2026-11-27 (`dichiarato: Matteo, 2026-11-27`). Restano
+aperte solo le due prove di misura sopra.
 
 Made in Landi Brain · [Matteo Landi](https://www.linkedin.com/in/matteolandidigital)

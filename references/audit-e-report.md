@@ -31,6 +31,8 @@ Esito per voce: `ok`, `anomalia` o `non verificato`.
 | 11 | Solo Single image or video attivo |
 | 12 | Nessun browser add-on non previsto |
 | 13 | Enhancement uguali a quelli delle ads di riferimento |
+| 14 | Data di fine, se richiesta: uguale in tutte le ads, letta dopo il ricarico |
+| 15 | Website URL letta in ogni gruppo di posizionamenti |
 
 ## Controlli sull'insieme
 
@@ -60,6 +62,20 @@ Tabella per creatività:
 
 | File o gruppo | Nome ad | Prodotto | URL | Stato | Anomalie |
 |---|---|---|---|---|---|
+
+## Output finale di default (2026-11-27, `dichiarato: Matteo`)
+
+Quando il caricamento è finito, il report chiude con questo formato, senza
+richiederlo:
+
+| Campagna | Adset | URL di destinazione | Ads |
+|---|---|---|---|
+
+Sotto la tabella: totale di campagne, adset e ads; data di fine, se impostata.
+
+Poi la struttura dei nomi, con ogni componente spiegato in una riga. Esempio
+generico: `[anno]formato_periodo_promo_prodotto_versione_codiceTesto_destinazione`
+con `[2026]img_BFCM_BF_Promo30_v1_TEXT15_productPage`.
 
 Chiudi con i punti ancora da verificare con Matteo (da `punti-da-verificare.md`)
 solo se il caso li ha toccati.

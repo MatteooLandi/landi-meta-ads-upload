@@ -130,6 +130,8 @@ DOPO Done  RIAPRI il dettaglio della ad e verifica che le selezioni siano rimast
 
 ## Dopo il cambio dei media: Meta riattiva formati e tag (`inferito`, stessa sessione)
 
+Sostituendo video con immagini (`verificato`, 2026-11-27) Meta riattiva anche Format display options 3/3 (Carousel e Collection), Advantage+ creative enhancements (Add overlays, Visual touch-ups) ed Essential enhancements. Rifai la pulizia e rileggi i contatori.
+
 Dopo aver cambiato i media, Meta può riattivare Carousel, Collection e i tag
 prodotto. Con i tag prodotto attivi, l'interruttore Product browsing resta
 bloccato su On e non si spegne finché i tag non sono tolti.
@@ -205,6 +207,36 @@ options e il nome richiedono la singola ad o "Edit each ad".
 Le modifiche valgono per tutte le ads selezionate (`verificato`, 2026-11-06):
 se un valore deve differire da ad a ad (testo, destinazione, CTA), seleziona
 una ad per volta.
+
+## Bozze in altri adset: copia e incolla (2026-11-27, `verificato`)
+
+- Il Duplicate rapido copia solo nello stesso adset. Per portare bozze in altri
+  adset: seleziona le bozze, Cmd+C; apri la scheda Ad sets, seleziona uno o più
+  adset di destinazione, Cmd+V. Meta crea una copia per ogni adset selezionato.
+- Gli appunti restano nella pagina aperta. Un cambio URL o un ricarico li svuota
+  e Meta risponde "You haven't copied any items". Copia e incolla nella stessa
+  sessione.
+- Cmd+V nella vista Ads apre "Duplicate your ads": con Cancel si chiude senza
+  copiare.
+- Le copie restano bozze. Il nome finisce con " - Copy" e va corretto.
+
+## Nomi e date in modifica multipla (2026-11-27, `verificato`)
+
+- Il nome digitato nell'editor singolo può non salvarsi. Rileggi la lista ads
+  dopo il ricarico.
+- Nella tabella multipla i valori si digitano con i tasti. Quelli impostati da
+  script non restano.
+- Data di fine: "Edit all selected ads", poi Ongoing, poi End on, data, ora. Ore,
+  minuti e AM/PM si impostano per segmento (Backspace e digita; ArrowUp o
+  ArrowDown per cambiare AM/PM). Dopo il salvataggio riapri il pannello e leggi
+  la data di ogni ad.
+- Website URL: un valore impostato in "Edit all selected ads" vale per tutte.
+  Controlla ogni gruppo di posizionamenti dal menu a tendina.
+
+## Batch del browser
+
+Un batch con più di circa quindici azioni, o con attese lunghe, può non
+rispondere. Spezzalo in blocchi corti e rileggi lo stato dopo ogni blocco.
 
 ## Errore di login su un profilo
 
