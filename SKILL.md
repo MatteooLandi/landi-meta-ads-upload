@@ -98,6 +98,12 @@ Matteo.
 - **Solo Single media, nient'altro** (`dichiarato: Matteo, 2026-11-05`). Product
   browsing spento, Carousel e Collection spenti. Dettaglio in
   `references/impostazioni-ad.md`.
+- **Nessuna destinazione diversa dall'ad, tassativo** (`dichiarato: Matteo,
+  2026-11-27`: "vale anche per tutte le ads su singolo prodotto"). Vale per ogni
+  ad, di qualsiasi obiettivo, anche Leads a URL unico: il traffico non deve
+  disperdersi su prodotti o URL diversi. Si spengono "Show site link media" in
+  Carousel e Collection, "Show app store details", "Show products" ed Interactive
+  experiences con prodotti. Dettaglio in `references/impostazioni-ad.md`.
 - **Interazione solo in chat, poche parole.** Report e domande in chat, in tabelle
   e bullet. Nessun file di report.
 - **Lettura lean del browser.** Per ogni ciclo leggi solo nodi visibili e
@@ -179,6 +185,7 @@ FORMATO = solo "Single image or video" (o "Single media"), nient'altro
 SPEGNI Product browsing (Personalized destinations deve essere 0/4). Se resta bloccato su On, togli prima i tag prodotto
 SPEGNI Carousel | Collection | Video slideshow | varianti prodotto o app store (Format display options deve essere 1/3)
 SPEGNI prodotti, media correlati, tag prodotto ereditati
+SPEGNI site link media, app store details, show products, Interactive experiences con prodotti (tassativo, qualsiasi obiettivo)
 MANTIENI solo gli enhancement attivi nelle ads di riferimento. Tutto il resto spento
 IGNORA i suggerimenti "Apply now"
 Add-on: solo se già nell'account
@@ -230,6 +237,7 @@ prodotto, URL, stato, anomalie), verifiche non fatte. Nessun file scritto.
 - [ ] Nomi unici, nessun - copy, naming come nell'account
 - [ ] URL, copy, headline e description coerenti con ogni file
 - [ ] Single media e nient'altro: Product browsing spento, Format display options 1/3
+- [ ] Nessuna destinazione diversa dall'ad: site link media, app store details, show products e Interactive experiences spenti (tassativo)
 - [ ] Nessun formato, prodotto o enhancement non richiesto
 - [ ] Uscita dall'editor con "Save draft", mai con Publish. Nomi unici riletti nella lista ads
 - [ ] Ad sources a 0 e "Text improvements" spento

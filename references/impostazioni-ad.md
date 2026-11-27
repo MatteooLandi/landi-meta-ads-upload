@@ -20,6 +20,11 @@ SPENTO   prodotti, media correlati, tag prodotto, ogni fonte che aggiunge prodot
 
 I tag prodotto e i media correlati ereditati da altre ads si rimuovono sempre.
 
+Regola tassativa (`dichiarato: Matteo, 2026-11-27`): per ogni ad, anche su
+singolo prodotto e di qualsiasi obiettivo, nessuna destinazione diversa
+dall'ad. Il traffico non si disperde su prodotti o URL diversi. Per le campagne
+Leads a URL unico vale lo stesso, perché l'obiettivo è uno solo.
+
 ### Dove si spegne (`inferito`, provato su un caso reale, 2026-11-05)
 
 Il riscontro finale è sempre sulla singola ad, dopo il ricarico:
@@ -29,12 +34,16 @@ Il riscontro finale è sempre sulla singola ad, dopo il ricarico:
   toglie la spunta "Use product browsing to personalize buyer journey" su
   "Edit all selected ads" e si controlla ogni riga.
 - **Carousel e Collection**: sezione "Ad experiences", riga "Format display
-  options", pulsante Edit. Nel pannello Carousel si tolgono "Show products" e
-  "Show app store details"; nel pannello Collection "Show products" e "Show
+  options", pulsante Edit. Nel pannello Carousel si tolgono "Show site link media",
+  "Show products" e "Show app store details"; nel pannello Collection "Show products" e "Show
   site links". Ogni pannello deve mostrare `0 of 2 enabled`. In Single media il
   collage "Show mixed media" resta spento. Esito atteso: "Format display
   options (1/3)", con acceso solo Single media. Il pannello non compare nella
   vista con più ads selezionate: si fa ad per ad.
+- **Interactive experiences**: sezione "Ad experiences", riga "Interactive
+  experiences", pulsante Edit. "Reveal details over time" con "Show Products"
+  attivo mostra prodotti dal catalogo: si toglie la spunta. Esito atteso:
+  "Turned off: Reveal details over time".
 - **Duplicazione**: nella finestra "Duplicate your ad" si toglie la spunta
   "Add relevant products to this ad" prima di continuare.
 - **Raccomandazioni pre-spuntate** (`dichiarato: Matteo, 2026-11-05`: "quando
