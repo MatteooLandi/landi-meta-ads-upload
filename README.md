@@ -12,8 +12,8 @@ indicazioni: chi la lancia prende quel ruolo.
 
 ## Stato
 
-BOZZA. La skill non è ancora stata provata su un caso reale: le bozze create
-vanno controllate una per una in Ads Manager prima di pubblicare.
+Testata su più casi reali, confermata da Matteo il 2026-11-27. Le bozze create
+vanno comunque controllate in Ads Manager prima di pubblicare.
 
 ## Cosa serve
 
